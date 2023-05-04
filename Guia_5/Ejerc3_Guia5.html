@@ -1,0 +1,94 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<title>Ejerc3_Guia5.java</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<style type="text/css">
+<!--
+body {color: #000000; background-color: #ffffff; font-family: Monospaced}
+pre {color: #000000; background-color: #ffffff; font-family: Monospaced}
+table {color: #000000; background-color: #e9e8e2; font-family: Monospaced}
+.string {color: #ce7b00}
+.literal {color: #0000e6}
+.ST3 {color: #009900; font-family: Monospaced; font-style: italic}
+.ST4 {font-family: Monospaced; font-style: italic}
+.ST2 {font-family: Monospaced; font-weight: bold; font-style: italic}
+.comment {color: #969696}
+.ST5 {color: #009900}
+.ST0 {color: #969696; font-family: Monospaced; font-weight: bold}
+.ST1 {font-family: Monospaced; font-weight: bold}
+-->
+</style>
+</head>
+<body>
+<table width="100%"><tr><td align="center">C:\Users\Boddy-g\Documents\NetBeansProjects\test\src\Guia_5\Ejerc3_Guia5.java</td></tr></table>
+<pre>
+<span class="comment">/*</span>
+<span class="comment">Recorrer un vector de N enteros contabilizando cuántos números son de 1 dígito, </span>
+<span class="comment">cuántos de 2 dígitos, etcétera (hasta 5 dígitos).</span>
+<span class="comment"> */</span>
+<span class="literal">package</span> Guia_5;
+
+<span class="literal">import</span> java.util.Scanner;
+
+<span class="comment">/**</span>
+<span class="comment"> *</span>
+<span class="comment"> * </span><span class="ST0">@author</span> <span class="comment">Boddy</span><span class="comment">-</span><span class="comment">g</span>
+ <span class="comment">*/</span>
+<span class="literal">public</span> <span class="literal">class</span> <span class="ST1">Ejerc3_Guia5</span> {
+
+    <span class="comment">/**</span>
+<span class="comment">     * </span><span class="ST0">@param</span> args <span class="comment">the</span> <span class="comment">command</span> <span class="comment">line</span> <span class="comment">arguments</span>
+     <span class="comment">*/</span>
+    <span class="literal">public</span> <span class="literal">static</span> <span class="literal">void</span> <span class="ST2">main</span>(String[] args) {
+        Scanner read= <span class="literal">new</span> Scanner(System.<span class="ST3">in</span>);
+        <span class="literal">int</span> tam;
+        System.<span class="ST3">out</span>.println(<span class="string">&quot;</span><span class="string">Ingrese el tamaño del vector</span><span class="string">&quot;</span>);
+        tam=read.nextInt();
+        <span class="literal">int</span>[] vector=<span class="literal">new</span> <span class="literal">int</span>[tam];
+        <span class="ST4">rellenarVector</span>(vector);
+        <span class="ST4">contarNum</span>(vector);
+    }
+    <span class="literal">public</span> <span class="literal">static</span> <span class="literal">void</span> <span class="ST2">rellenarVector</span>(<span class="literal">int</span> vector[]) {
+        <span class="literal">for</span> (<span class="literal">int</span> i = 0; i &lt; vector.<span class="ST5">length</span>; i++) {
+            vector[i]= (<span class="literal">int</span>) (Math.<span class="ST4">random</span>() * 100000);
+            System.<span class="ST3">out</span>.println(vector[i]);
+        }
+    }
+    <span class="literal">public</span> <span class="literal">static</span> <span class="literal">void</span> <span class="ST2">contarNum</span>(<span class="literal">int</span> vector[]) {
+        <span class="literal">int</span> cont1=0, cont2=0, cont3=0, cont4=0, cont5=0;
+        <span class="literal">int</span>  result;
+        <span class="literal">for</span> (<span class="literal">int</span> i = 0; i &lt; vector.<span class="ST5">length</span>; i++) {
+            result=1;
+            <span class="literal">while</span> (vector[i] &gt; 10) {
+                vector[i] = vector[i] / 10;
+                result=result+1;
+            }
+            <span class="literal">switch</span> (result) {
+                <span class="literal">case</span> 1: 
+                    cont1++;
+                    <span class="literal">break</span>;
+                <span class="literal">case</span> 2: 
+                    cont2++;
+                    <span class="literal">break</span>;
+                <span class="literal">case</span> 3: 
+                    cont3++;
+                    <span class="literal">break</span>;
+                <span class="literal">case</span> 4: 
+                    cont4++;
+                    <span class="literal">break</span>;
+                <span class="literal">case</span> 5: 
+                    cont5++;
+                    <span class="literal">break</span>;
+            } 
+        }
+        System.<span class="ST3">out</span>.println(<span class="string">&quot;</span><span class="string">Cantidad de num con 1 digito: </span><span class="string">&quot;</span> + cont1);
+        System.<span class="ST3">out</span>.println(<span class="string">&quot;</span><span class="string">Cantidad de num con 2 digito: </span><span class="string">&quot;</span> + cont2);
+        System.<span class="ST3">out</span>.println(<span class="string">&quot;</span><span class="string">Cantidad de num con 3 digito: </span><span class="string">&quot;</span> + cont3);
+        System.<span class="ST3">out</span>.println(<span class="string">&quot;</span><span class="string">Cantidad de num con 4 digito: </span><span class="string">&quot;</span> + cont4);
+        System.<span class="ST3">out</span>.println(<span class="string">&quot;</span><span class="string">Cantidad de num con 5 digito: </span><span class="string">&quot;</span> + cont5);
+    }
+}
+
+</pre></body>
+</html>

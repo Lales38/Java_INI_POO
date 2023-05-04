@@ -1,0 +1,71 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<title>Ejerc2_guia5.java</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<style type="text/css">
+<!--
+body {color: #000000; background-color: #ffffff; font-family: Monospaced}
+pre {color: #000000; background-color: #ffffff; font-family: Monospaced}
+table {color: #000000; background-color: #e9e8e2; font-family: Monospaced}
+.string {color: #ce7b00}
+.literal {color: #0000e6}
+.comment {color: #969696}
+.ST0 {color: #969696; font-family: Monospaced; font-weight: bold}
+-->
+</style>
+</head>
+<body>
+<table width="100%"><tr><td align="center">C:\Users\Boddy-g\Documents\NetBeansProjects\test\src\Guia_5\Ejerc2_guia5.java</td></tr></table>
+<pre>
+<span class="comment">/*</span>
+<span class="comment">Realizar un algoritmo que llene un vector de tamaño N con valores aleatorios </span>
+<span class="comment">y le pida al usuario un número a buscar en el vector. El programa mostrará </span>
+<span class="comment">dónde se encuentra el numero y si se encuentra repetido</span>
+<span class="comment"> */</span>
+<span class="literal">package</span> Guia_5;
+
+<span class="literal">import</span> java.util.Scanner;
+
+<span class="comment">/**</span>
+<span class="comment"> *</span>
+<span class="comment"> * </span><span class="ST0">@author</span> <span class="comment">Boddy</span><span class="comment">-</span><span class="comment">g</span>
+ <span class="comment">*/</span>
+<span class="literal">public</span> <span class="literal">class</span> Ejerc2_guia5 {
+
+    <span class="comment">/**</span>
+<span class="comment">     * </span><span class="ST0">@param</span> <span class="comment">args</span> <span class="comment">the</span> <span class="comment">command</span> <span class="comment">line</span> <span class="comment">arguments</span>
+     <span class="comment">*/</span>
+    <span class="literal">public</span> <span class="literal">static</span> <span class="literal">void</span> main(String[] args) {
+        Scanner read=<span class="literal">new</span> Scanner(System.in);
+        <span class="literal">int</span>  tam, num;
+        System.out.println(<span class="string">&quot;</span><span class="string">Ingrese el tamaño de su vector</span><span class="string">&quot;</span>);
+        tam=read.nextInt();
+        <span class="literal">int</span> [] vector = <span class="literal">new</span> <span class="literal">int</span> [tam];
+        rellenarVector(vector);
+        System.out.println(<span class="string">&quot;</span><span class="string">Ingre el número que desea buscar 1 - 10</span><span class="string">&quot;</span>);
+        num=read.nextInt();
+        buscarNum(vector, num);
+    }
+    <span class="literal">public</span> <span class="literal">static</span> <span class="literal">void</span> rellenarVector(<span class="literal">int</span> vector[]) {
+        <span class="literal">for</span> (<span class="literal">int</span> i = 0; i &lt; vector.length; i++) {
+            vector[i]= (<span class="literal">int</span>) (Math.random() * 10);
+            System.out.println(vector[i]);
+        }
+    }
+    <span class="literal">public</span> <span class="literal">static</span> <span class="literal">void</span> buscarNum(<span class="literal">int</span> vector[], <span class="literal">int</span> n) {
+        <span class="literal">int</span> cont=0;
+        <span class="literal">for</span> (<span class="literal">int</span> i = 0; i &lt; vector.length; i++) {
+            <span class="literal">if</span> (vector[i] == n) {
+                System.out.println(<span class="string">&quot;</span><span class="string">El número </span><span class="string">&quot;</span>+ n +<span class="string">&quot;</span><span class="string"> se encuentra en la posición: </span><span class="string">&quot;</span>+ i);
+                cont=cont+1;
+            }
+        }
+        <span class="literal">if</span> (cont == 0) {
+            System.out.println(<span class="string">&quot;</span><span class="string">El número </span><span class="string">&quot;</span>+ n + <span class="string">&quot;</span><span class="string"> no se encuentra en el vector</span><span class="string">&quot;</span>);
+        }
+    }
+}
+
+</pre></body>
+</html>

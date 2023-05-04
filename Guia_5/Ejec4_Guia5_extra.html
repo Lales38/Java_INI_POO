@@ -1,0 +1,87 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<title>Ejec4_Guia5_extra.java</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<style type="text/css">
+<!--
+body {color: #000000; background-color: #ffffff; font-family: Monospaced}
+pre {color: #000000; background-color: #ffffff; font-family: Monospaced}
+table {color: #000000; background-color: #e9e8e2; font-family: Monospaced}
+.string {color: #ce7b00}
+.literal {color: #0000e6}
+.ST3 {color: #009900; font-family: Monospaced; font-style: italic}
+.ST5 {font-family: Monospaced; font-style: italic}
+.ST2 {font-family: Monospaced; font-weight: bold; font-style: italic}
+.comment {color: #969696}
+.ST4 {color: #009900}
+.ST0 {color: #969696; font-family: Monospaced; font-weight: bold}
+.ST1 {font-family: Monospaced; font-weight: bold}
+-->
+</style>
+</head>
+<body>
+<table width="100%"><tr><td align="center">C:\Users\Boddy-g\Documents\NetBeansProjects\test\src\Guia_5\Ejec4_Guia5_extra.java</td></tr></table>
+<pre>
+<span class="comment">/*</span>
+<span class="comment"> * To change this license header, choose License Headers in Project Properties.</span>
+<span class="comment"> * To change this template file, choose Tools | Templates</span>
+<span class="comment"> * and open the template in the editor.</span>
+<span class="comment"> */</span>
+<span class="literal">package</span> Guia_5;
+
+<span class="literal">import</span> java.util.Scanner;
+
+<span class="comment">/**</span>
+<span class="comment"> *</span>
+<span class="comment"> * </span><span class="ST0">@author</span> <span class="comment">Boddy</span><span class="comment">-</span><span class="comment">g</span>
+ <span class="comment">*/</span>
+<span class="literal">public</span> <span class="literal">class</span> <span class="ST1">Ejec4_Guia5_extra</span> {
+
+    <span class="comment">/**</span>
+<span class="comment">     * </span><span class="ST0">@param</span> args <span class="comment">the</span> <span class="comment">command</span> <span class="comment">line</span> <span class="comment">arguments</span>
+     <span class="comment">*/</span>
+    <span class="literal">public</span> <span class="literal">static</span> <span class="literal">void</span> <span class="ST2">main</span>(String[] args) {
+        Scanner read=<span class="literal">new</span> Scanner(System.<span class="ST3">in</span>);
+        <span class="literal">double</span> nota, acum_nota=0;
+        <span class="literal">double</span>[] vector= <span class="literal">new</span> <span class="literal">double</span>[10];
+        <span class="literal">for</span> (<span class="literal">int</span> i = 0; i &lt; vector.<span class="ST4">length</span>; i++) {
+            <span class="literal">for</span> (<span class="literal">int</span> j = 1; j &lt;= 4; j++) {
+                System.<span class="ST3">out</span>.println(<span class="string">&quot;</span><span class="string">Ingrese la nota </span><span class="string">&quot;</span>+ j);
+                nota=read.nextDouble();
+                <span class="literal">switch</span> (j){
+                    <span class="literal">case</span> 1:
+                        acum_nota=acum_nota+(nota*0.1);
+                        <span class="literal">break</span>;
+                    <span class="literal">case</span> 2:
+                        acum_nota=acum_nota+(nota*0.15);
+                        <span class="literal">break</span>;
+                    <span class="literal">case</span> 3:
+                        acum_nota=acum_nota+(nota*0.25);
+                        <span class="literal">break</span>;
+                    <span class="literal">case</span> 4:
+                        acum_nota=acum_nota+(nota*0.5);
+                        <span class="literal">break</span>;
+                }
+            }
+            vector[i]=acum_nota;
+            acum_nota=0;
+        }
+        <span class="ST5">aprobados</span>(vector);
+    }
+    <span class="literal">public</span> <span class="literal">static</span> <span class="literal">void</span> <span class="ST2">aprobados</span>(<span class="literal">double</span> vector[]) {
+        <span class="literal">int</span> cont_A=0, cont_D=0;
+        <span class="literal">for</span> (<span class="literal">int</span> i = 0; i &lt; vector.<span class="ST4">length</span>; i++) {
+            <span class="literal">if</span> (vector[i]&gt;=7) {
+                cont_A++;
+            } <span class="literal">else</span> {
+                cont_D++;
+            }
+        }
+        System.<span class="ST3">out</span>.println(<span class="string">&quot;</span><span class="string">La cantidad de aprobados son: </span><span class="string">&quot;</span>+ cont_A);
+        System.<span class="ST3">out</span>.println(<span class="string">&quot;</span><span class="string">La cantidad de desaprobados son: </span><span class="string">&quot;</span>+ cont_D);
+    }
+}
+
+</pre></body>
+</html>

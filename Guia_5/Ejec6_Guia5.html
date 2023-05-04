@@ -1,0 +1,107 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<title>Ejec6_Guia5.java</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<style type="text/css">
+<!--
+body {color: #000000; background-color: #ffffff; font-family: Monospaced}
+pre {color: #000000; background-color: #ffffff; font-family: Monospaced}
+table {color: #000000; background-color: #e9e8e2; font-family: Monospaced}
+.string {color: #ce7b00}
+.literal {color: #0000e6}
+.ST3 {color: #009900; font-family: Monospaced; font-style: italic}
+.ST5 {font-family: Monospaced; font-style: italic}
+.ST2 {font-family: Monospaced; font-weight: bold; font-style: italic}
+.comment {color: #969696}
+.ST4 {color: #009900}
+.ST0 {color: #969696; font-family: Monospaced; font-weight: bold}
+.ST1 {font-family: Monospaced; font-weight: bold}
+-->
+</style>
+</head>
+<body>
+<table width="100%"><tr><td align="center">C:\Users\Boddy-g\Documents\NetBeansProjects\test\src\Guia_5\Ejec6_Guia5.java</td></tr></table>
+<pre>
+<span class="comment">/*</span>
+<span class="comment">Un cuadrado mágico 3 x 3 es una matriz 3 x 3 formada por números del 1 al 9 </span>
+<span class="comment">donde la suma de sus filas, sus columnas y sus diagonales son idénticas. Crear </span>
+<span class="comment">un programa que permita introducir un cuadrado por teclado y determine si este </span>
+<span class="comment">cuadrado es mágico o no. El programa deberá comprobar que los números </span>
+<span class="comment">introducidos son correctos, es decir, están entre el 1 y el 9.</span>
+<span class="comment"> */</span>
+<span class="literal">package</span> Guia_5;
+
+<span class="literal">import</span> java.util.Scanner;
+
+<span class="comment">/**</span>
+<span class="comment"> *</span>
+<span class="comment"> * </span><span class="ST0">@author</span> <span class="comment">Boddy</span><span class="comment">-</span><span class="comment">g</span>
+ <span class="comment">*/</span>
+<span class="literal">public</span> <span class="literal">class</span> <span class="ST1">Ejec6_Guia5</span> {
+
+    <span class="comment">/**</span>
+<span class="comment">     * </span><span class="ST0">@param</span> args <span class="comment">the</span> <span class="comment">command</span> <span class="comment">line</span> <span class="comment">arguments</span>
+     <span class="comment">*/</span>
+    <span class="literal">public</span> <span class="literal">static</span> <span class="literal">void</span> <span class="ST2">main</span>(String[] args) {
+        Scanner read= <span class="literal">new</span> Scanner(System.<span class="ST3">in</span>);
+        <span class="literal">int</span>[][] matriz= <span class="literal">new</span> <span class="literal">int</span>[3][3];
+        <span class="literal">int</span> num;
+        
+        <span class="literal">for</span> (<span class="literal">int</span> i = 0; i &lt; matriz.<span class="ST4">length</span>; i++) {
+            <span class="literal">for</span> (<span class="literal">int</span> j = 0; j &lt; matriz.<span class="ST4">length</span>; j++) {
+                System.<span class="ST3">out</span>.println(<span class="string">&quot;</span><span class="string">Ingrese un número</span><span class="string">&quot;</span>);
+                num=read.nextInt();
+                <span class="literal">while</span> (num &lt;0 || num &gt;9 ) {
+                    System.<span class="ST3">out</span>.println(<span class="string">&quot;</span><span class="string">Ingrese de vuelta el num</span><span class="string">&quot;</span>);
+                    num=read.nextInt();
+                } 
+                matriz[i][j]=num;
+            }
+        } 
+        <span class="ST5">mostrarMatriz</span>(matriz);
+        <span class="literal">if</span> (<span class="ST5">sumafilas</span>(matriz) == <span class="ST5">sumaColum</span>(matriz)) {
+            System.<span class="ST3">out</span>.println(<span class="string">&quot;</span><span class="string">La matriz es magica</span><span class="string">&quot;</span>);
+        } <span class="literal">else</span> {
+            System.<span class="ST3">out</span>.println(<span class="string">&quot;</span><span class="string">La matriz no es magica</span><span class="string">&quot;</span>);
+        }
+        
+    }
+    <span class="literal">public</span> <span class="literal">static</span> <span class="literal">void</span> <span class="ST2">mostrarMatriz</span>(<span class="literal">int</span> matriz[][]) {
+        <span class="literal">for</span> (<span class="literal">int</span> i = 0; i &lt; matriz.<span class="ST4">length</span>; i++) {
+            <span class="literal">for</span> (<span class="literal">int</span> j = 0; j &lt; matriz.<span class="ST4">length</span>; j++) {
+                System.<span class="ST3">out</span>.print(<span class="string">&quot;</span><span class="string">[ </span><span class="string">&quot;</span>+ matriz [i][j]+<span class="string">&quot;</span><span class="string"> ]</span><span class="string">&quot;</span>);
+            }
+            System.<span class="ST3">out</span>.println(<span class="string">&quot;&quot;</span>);
+        }
+    }
+    <span class="literal">public</span> <span class="literal">static</span> <span class="literal">int</span> <span class="ST2">sumafilas</span>(<span class="literal">int</span> matriz[][]) {
+        <span class="literal">int</span> acumfilas=0, diagonal_p=0;
+        <span class="literal">for</span> (<span class="literal">int</span> i = 0; i &lt; matriz.<span class="ST4">length</span>; i++) {
+            <span class="literal">for</span> (<span class="literal">int</span> j = 0; j &lt; matriz.<span class="ST4">length</span>; j++) {
+                acumfilas= acumfilas + matriz[i][j];
+                <span class="literal">if</span> (i==j){
+                    diagonal_p=diagonal_p + matriz[i][j];
+                }
+            }
+        }
+        acumfilas= acumfilas + diagonal_p;
+        <span class="literal">return</span> acumfilas;
+    }
+    <span class="literal">public</span> <span class="literal">static</span> <span class="literal">int</span> <span class="ST2">sumaColum</span>(<span class="literal">int</span> matriz[][]) {
+        <span class="literal">int</span> acumcolum=0, diagonal_s=0;
+        <span class="literal">for</span> (<span class="literal">int</span> j = 0; j &lt; matriz.<span class="ST4">length</span>; j++) {
+            <span class="literal">for</span> (<span class="literal">int</span> i = 0; i &lt; matriz.<span class="ST4">length</span>; i++) {
+                acumcolum=acumcolum + matriz [i][j];
+                <span class="literal">if</span> (i+j == matriz.<span class="ST4">length</span> -1 ){
+                    diagonal_s=diagonal_s + matriz[i][j];
+                }     
+            }
+        }
+        acumcolum=acumcolum+diagonal_s;
+        <span class="literal">return</span> acumcolum;
+    }
+}
+
+</pre></body>
+</html>
