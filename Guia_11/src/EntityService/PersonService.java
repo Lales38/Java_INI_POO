@@ -15,6 +15,8 @@ public class PersonService {
     public void addPerson(ArrayList<E1Person> listPerson) {
         E1Person p1 = new E1Person();
 
+        listPerson.add(new E1Person("Andres", "Gutierrez", 34, 23456789));
+
         p1.setName("Ale");
         p1.setSurname("Salerno");
         p1.setAge(45);
@@ -39,51 +41,58 @@ public class PersonService {
         //p2.setDog(listDog);
         listPerson.add(p3);
     }
+    //Muestro la persona que va a adoptar
+    //Muestro la lista de perros
+    //Elijo el perro
 
     public void chooseDog(ArrayList<E1Person> listPerson, ArrayList<E1Dog> listDog) {
         for (int i = 0; i < listPerson.size(); i++) {
+            System.out.println(listPerson.get(i).getName() + " , lista de mascotas a adoptar: ");
+            System.out.println("  ");
+            int elegido;
+            for (int j = 0; j < listDog.size(); j++) {
+                System.out.print("Opción : " + (j + 1));
+                System.out.println("  nombre = " + listDog.get(j).getName());
+            }
+            
+                System.out.println("  ");
+                System.out.println("Elija la opción del perro a adoptar: ");
+                elegido = read.nextInt() - 1;
 
-            E1Person p1 = listPerson.get(i);
-            int op;
-            System.out.println("----------Listado de perros -------------");
+                if (listDog.get(elegido).isAdoptado() == true) {
+                    System.out.println("El nombre elegido ya esta adoptado:");
+                    i=i-1;
+                } else {
 
-            do {
+                    listPerson.get(i).setDog(listDog.get(elegido));
+                    listDog.get(elegido).setAdoptado(true);
+                    System.out.println(listPerson.get(i).getName()+", adoptaste a "+ listDog.toString());
 
-                int cont = 1;
-                for (E1Dog aux : listDog) {
-                    System.out.println("Opción " + cont);
-                    System.out.println("aux = " + aux.toString());
-                    cont += 1;
                 }
-                System.out.println("Ingrese una opción: ");
-
-                op = read.nextInt();
-                ArrayList<E1Dog> dog = new ArrayList<E1Dog>();
-                dog.add(listDog.get(op - 1));
-                p1.setDog(dog);
-                listDog.remove(op - 1);
-                System.out.println("Desea adoptar un perro mas? (s/n)");
-
-            } while ("s".equalsIgnoreCase(read.next()));
-
+            
         }
+
     }
 
-    public void showPerson(ArrayList<E1Person> listPerson) {
-        System.out.println("------------Lista de personas -----------------");
-//        listPerson.forEach( aux -> {
-//            System.out.println(aux.toString());
-//        });
 
-        
+
+public void showPerson(ArrayList<E1Person> listPerson) {
+        System.out.println("------------Lista de personas -----------------");
+
         for (E1Person aux : listPerson) {
             System.out.println("Lis Per = " + aux);
-           
-           
-            System.out.println("----------------------------------------");
-          
+
         }
+        System.out.println("----------------------------------------");
 
     }
 
+    public void showDog(ArrayList<E1Dog> listDog) {
+        int cont = 0;
+        for (E1Dog aux : listDog) {
+            System.out.println("Opción " + cont);
+            System.out.println("aux = " + aux.toString());
+            cont += 1;
+        }
+    }
 }

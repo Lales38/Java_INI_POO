@@ -11,19 +11,18 @@ public class E1Person {
     private String name;
     private String surname;
     private Integer age;
-    private Integer dni;
-    
-    private ArrayList<E1Dog> dog;
+    private Integer dni;    
+    private E1Dog dog;
 
     public E1Person() {
     }
 
-    public E1Person(String name, String surname, Integer age, Integer dni, ArrayList<E1Dog> dog) {
+    public E1Person(String name, String surname, Integer age, Integer dni) {
         this.name = name;
         this.surname = surname;
         this.age = age;
         this.dni = dni;
-        this.dog = dog;
+        
     }
 
     public String getName() {
@@ -58,11 +57,11 @@ public class E1Person {
         this.dni = dni;
     }
 
-    public ArrayList<E1Dog> getDog() {
+    public E1Dog getDog() {
         return dog;
     }
 
-    public void setDog(ArrayList<E1Dog> dog) {
+    public void setDog(E1Dog dog) {
         this.dog = dog;
     }
 

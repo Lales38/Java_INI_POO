@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Ejer_extra_herencia">
+  <ClassDiagramComponents>
+    <Class name="Edificio" package="Entidad" visibility="public" isAbstract="true" xPosition="234.0" yPosition="37.0">
+      <Fields>
+        <Field name="alto" type="int" visibility="protected"/>
+        <Field name="largo" type="int" visibility="protected"/>
+        <Field name="ancho" type="int" visibility="protected"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="calcularSuperficie" returnType="int" visibility="public"/>
+        <Method name="calcularVolumen" returnType="int" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Polideportivo" package="Entidad" visibility="public" xPosition="55.0" yPosition="274.0">
+      <Fields>
+        <Field name="nombre" type="String" visibility="private"/>
+        <Field name="techado" type="boolean" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="untitledMethod" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="EdificioDeOficinas" package="Entidad" visibility="public" xPosition="404.0" yPosition="274.0">
+      <Fields>
+        <Field name="nOficinas" type="int" visibility="private"/>
+        <Field name="nPisos" type="int" visibility="private"/>
+        <Field name="nPersonas" type="int" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="calcularCantPersonas" returnType="int" visibility="public"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <IsRelation name="is" source="Entidad.Polideportivo" target="Entidad.Edificio"/>
+    <IsRelation name="is" source="Entidad.EdificioDeOficinas" target="Entidad.Edificio"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

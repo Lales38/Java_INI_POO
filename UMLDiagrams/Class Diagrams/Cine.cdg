@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Cine">
+  <ClassDiagramComponents>
+    <Class name="Cine" package="" visibility="public" xPosition="105.0" yPosition="146.0">
+      <Fields>
+        <Field name="titulo" type="Object" visibility="private"/>
+        <Field name="salaEspectadores" type="Object" visibility="private"/>
+        <Field name="costoEntrada" type="Object" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="Pelicula" package="" visibility="public" xPosition="432.0" yPosition="64.0">
+      <Fields>
+        <Field name="titulo" type="Object" visibility="private"/>
+        <Field name="duracion" type="Object" visibility="private"/>
+        <Field name="edadMin" type="Object" visibility="private"/>
+        <Field name="director" type="Object" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="espectador" package="" visibility="public" xPosition="451.0" yPosition="297.0">
+      <Fields>
+        <Field name="nombre" type="Object" visibility="private"/>
+        <Field name="edad" type="Object" visibility="private"/>
+        <Field name="dineroDisponible" type="Object" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods/>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="tiene" source="Cine" target="Pelicula" type="Default" sourceCardinality="0..1" targetCardinality="1..1"/>
+    <HasRelation name="tiene" source="Cine" target="espectador" type="Default" sourceCardinality="0..1" targetCardinality="1..*" collectionType="List"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

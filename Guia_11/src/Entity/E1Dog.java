@@ -10,6 +10,7 @@ public class E1Dog {
     private String breed;
     private Integer age;
     private String size;
+    private boolean adoptado= false;
 
     public E1Dog() {
     }
@@ -53,10 +54,20 @@ public class E1Dog {
         this.size = size;
     }
 
+    public boolean isAdoptado() {
+        return adoptado;
+    }
+
+    public void setAdoptado(boolean adoptado) {
+        this.adoptado = adoptado;
+    }
+
     @Override
     public String toString() {
-        return "E1Dog{" + "name=" + name + ", breed=" + breed + ", age=" + age + ", size=" + size + '}';
+        return "E1Dog{" + "name=" + name + ", breed=" + breed + ", age=" + age + ", size=" + size + ", adoptado=" + adoptado + '}';
     }
+    
+
     
     
     
