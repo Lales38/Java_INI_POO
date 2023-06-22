@@ -13,6 +13,8 @@ import java.util.Scanner;
         
     }
     
+    
+    
     public String getNombre(Person n){
         return n.getNombre();
     }
@@ -87,6 +89,10 @@ import java.util.Scanner;
         }
         return IMC;        
     }
+
+    public Person crearPersona(Object object) {
+        return (Person) object;
+      }
 
 }
 

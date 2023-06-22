@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="G12_ex1">
+  <ClassDiagramComponents>
+    <Class name="Alquiler" package="Entidad" visibility="public" xPosition="65.0" yPosition="53.0">
+      <Fields>
+        <Field name="nombre" type="String" visibility="private"/>
+        <Field name="dni" type="int" visibility="private"/>
+        <Field name="ini" type="date" visibility="private"/>
+        <Field name="fin" type="date" visibility="private"/>
+        <Field name="posicion" type="int" visibility="private"/>
+        <Field name="tipoBarco" type="String" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="calcularAlquiler" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Barco" package="entidad" visibility="public" xPosition="343.0" yPosition="53.0">
+      <Fields>
+        <Field name="matricula" type="Int" visibility="protected"/>
+        <Field name="eslora" type="int" visibility="protected"/>
+        <Field name="anoFab" type="int" visibility="protected"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Velero" package="entidad" visibility="public" xPosition="223.0" yPosition="313.0">
+      <Fields>
+        <Field name="mastiles" type="int" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Embarcacion" package="entidad" visibility="public" xPosition="580.0" yPosition="225.0">
+      <Fields>
+        <Field name="cv" type="int" visibility="protected"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Yate" package="entidad" visibility="public" xPosition="580.0" yPosition="398.0">
+      <Fields>
+        <Field name="camarote" type="int" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="tiene" source="entidad.Velero" target="entidad.Barco" type="Default" sourceCardinality="0..1" targetCardinality="1..1"/>
+    <HasRelation name="tiene" source="entidad.Yate" target="entidad.Embarcacion" type="Default" sourceCardinality="0..1" targetCardinality="1..1"/>
+    <HasRelation name="tiene" source="Entidad.Alquiler" target="entidad.Barco" type="Composition" sourceCardinality="0..1" targetCardinality="1..*" collectionType="ArrayList"/>
+    <HasRelation name="tiene" source="entidad.Embarcacion" target="entidad.Barco" type="Default" sourceCardinality="0..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

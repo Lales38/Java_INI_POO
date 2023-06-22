@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="G12_ex3">
+  <ClassDiagramComponents>
+    <Class name="Alojamiento" package="Entity" visibility="public" isAbstract="true" xPosition="59.0" yPosition="31.0">
+      <Fields>
+        <Field name="nombre" type="String" visibility="protected"/>
+        <Field name="direcion" type="String" visibility="protected"/>
+        <Field name="lujar" type="String" visibility="protected"/>
+        <Field name="gerente" type="String" visibility="protected"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Hoteles" package="Entity" visibility="public" xPosition="335.0" yPosition="31.0">
+      <Fields>
+        <Field name="nHabitacion" type="Integer" visibility="protected"/>
+        <Field name="nCamas" type="Integer" visibility="protected"/>
+        <Field name="nPisos" type="Integer" visibility="protected"/>
+        <Field name="costoHabitacion" type="Double" visibility="protected"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="Hotel_4" package="Entity" visibility="public" xPosition="571.0" yPosition="31.0">
+      <Fields>
+        <Field name="gimnasio" type="boolean" visibility="protected"/>
+        <Field name="NombreRestaurent" type="String" visibility="protected"/>
+        <Field name="CapacidadRest" type="Integer" visibility="protected"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="Hotel_5" package="Entity" visibility="public" xPosition="617.0" yPosition="222.0">
+      <Fields>
+        <Field name="nSalones" type="Integer" visibility="private"/>
+        <Field name="nSuite" type="Integer" visibility="private"/>
+        <Field name="NLimosina" type="Integer" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="Extra_Hotelero" package="Entity" visibility="public" xPosition="121.0" yPosition="268.0">
+      <Fields>
+        <Field name="privado" type="boolean" visibility="protected"/>
+        <Field name="mCuadrados" type="iInteger" visibility="protected"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="Camoing" package="Entity" visibility="public" xPosition="59.0" yPosition="451.0">
+      <Fields>
+        <Field name="nMaxCarpa" type="Integer" visibility="private"/>
+        <Field name="Banio" type="Integer" visibility="private"/>
+        <Field name="restaurant" type="boolean" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="Residencias" package="Entity" visibility="public" xPosition="413.0" yPosition="408.0">
+      <Fields>
+        <Field name="nHabitaciones" type="Integer" visibility="private"/>
+        <Field name="descGremios" type="boolean" visibility="private"/>
+        <Field name="CampoDepor" type="boolean" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods/>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="tiene" source="Entity.Extra_Hotelero" target="Entity.Alojamiento" type="Default" sourceCardinality="0..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="Entity.Hoteles" target="Entity.Alojamiento"/>
+    <HasRelation name="es" source="Entity.Residencias" target="Entity.Extra_Hotelero" type="Default" sourceCardinality="0..1" targetCardinality="1..*" collectionType="ArrayList"/>
+    <HasRelation name="es" source="Entity.Camoing" target="Entity.Extra_Hotelero" type="Default" sourceCardinality="0..1" targetCardinality="1..*" collectionType="ArrayList"/>
+    <IsRelation name="is" source="Entity.Hotel_5" target="Entity.Hotel_4"/>
+    <IsRelation name="is" source="Entity.Hotel_4" target="Entity.Hoteles"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

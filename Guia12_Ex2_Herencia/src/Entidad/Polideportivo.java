@@ -36,6 +36,8 @@ public class Polideportivo extends Edificio {
         this.techado = techado;
     }
 
+   
+
     public int getAlto() {
         return alto;
     }

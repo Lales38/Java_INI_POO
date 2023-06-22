@@ -12,15 +12,15 @@ public class Eje3_PersonasIMC {
         // Crear 4 Obtejos de persona
         
         PersonService n1 = new PersonService();
-        Person p1 = n1.crearPersona();
-        Person p2 = n1.crearPersona();
+//        Person p1 = n1.crearPersona();
+//        Person p2 = n1.crearPersona();
         Person p3 = n1.crearPersona();
-        Person p4 = n1.crearPersona();
+        Person p4 = n1.crearPersona(null);
         
         Person [] Vector = new Person[4];
         
-        Vector [0] = p1;
-        Vector [1] = p2;
+//        Vector [0] = p1;
+//        Vector [1] = p2;
         Vector [2] = p3;
         Vector [3] = p4;
         

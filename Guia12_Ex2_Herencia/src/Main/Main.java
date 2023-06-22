@@ -31,7 +31,9 @@ public class Main {
         edif.add(p2);
         edif.add(of1);
         edif.add(of2);
+        
         int cont =1; int techado=0; int aireLibre =0;
+        
         for (Edificio edificio : edif) {
             
             System.out.println("La superficie del edificio "+ cont + " es: " + edificio.calcularSuperficie());
@@ -52,7 +54,7 @@ public class Main {
               
             }else{
                 EdificioDeOficinas aux = (EdificioDeOficinas)edificio;
-                System.out.println("La  cantidad de personas par el edificio "+ cont + "es: " +aux.calcularCantPersonas() );
+                System.out.println("La  cantidad de personas par el edificio "+ cont + " es: " +aux.calcularCantPersonas() );
             }
             System.out.println("--------------------------------------------------");
             System.out.println(" ");
